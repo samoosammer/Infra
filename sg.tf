@@ -1,5 +1,5 @@
 resource "aws_security_group" "ssh-allowed" {
-  vpc_id = "aws_vpc.dev-vpc.id"
+  vpc_id = aws_vpc.dev-vpc.id
   egress {
 
     from_port   = 0

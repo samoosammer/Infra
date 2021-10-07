@@ -1,6 +1,9 @@
 resource "aws_instance" "myweb-server" {
   ami           = lookup(var.AMI, var.AWS_REGION)
   instance_type = "t2.micro"
+  tags = {
+    Name = "myweb-server"
+  }
 
   #VPC
   subnet_id = aws_subnet.dev-subnet-public-1.id
@@ -30,7 +33,7 @@ resource "aws_instance" "myweb-server" {
   }
 }
 
-// Sends your public key to the instance
+#Sends public key to the instance
 resource "aws_key_pair" "uswest2" {
   key_name   = "uswest2"
   public_key = file(var.PUBLIC_KEY_PATH)

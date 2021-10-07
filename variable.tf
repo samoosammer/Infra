@@ -9,7 +9,7 @@ variable "AMI" {
 }
 
 variable "PRIVATE_KEY_PATH" {
-  default = "uswest2"
+  default = "uswest2.pem"
 }
 
 variable "PUBLIC_KEY_PATH" {
@@ -19,4 +19,3 @@ variable "PUBLIC_KEY_PATH" {
 variable "EC2_USER" {
   default = "ubuntu"
 }
-
